@@ -7,7 +7,7 @@ var app = express();
 var contexts = [];
 var twilio = require('twilio');
 
-app.get('/smsent', (req,res) => {
+app.get('/smssent', (req,res) => {
     var message = req.query.Body;
     var number = req.query.From;
     var twilioNumber = req.query.To;
@@ -46,7 +46,7 @@ app.get('/smsent', (req,res) => {
             console.log(response.output.text[0]);
             if (context == null){
                 contexts.push({'from': number ,
-                                 'context': context});
+                                 'context': response.context});
             } else {
                 contexts[contextIndex].context = response.context
             }
@@ -57,7 +57,7 @@ app.get('/smsent', (req,res) => {
             contexts.splice(contextIndex,1);
         }
 
-        var client = new twilio(accountSID,authToken);
+        var client = new twilio (accountSID,authToken);
         client.messages.create({
             from: twilioNumber,
             to: number,
