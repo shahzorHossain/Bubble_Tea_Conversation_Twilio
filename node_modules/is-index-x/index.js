@@ -1,6 +1,6 @@
 /**
  * @file Determine whether the passed value is a zero based index.
- * @version 1.0.0
+ * @version 1.1.0
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
@@ -9,9 +9,9 @@
 
 'use strict';
 
-var safeToString = require('safe-to-string-x');
-var toInteger = require('to-integer-x');
-var toNumber = require('to-number-x');
+var safeToString = require('to-string-symbols-supported-x');
+var toInteger = require('to-integer-x').toInteger2018;
+var toNumber = require('to-number-x').toNumber2018;
 var mathClamp = require('math-clamp-x');
 var MAX_SAFE_INTEGER = require('max-safe-integer');
 var reIsUint = /^(?:0|[1-9]\d*)$/;
