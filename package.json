@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.1",
+    "moment": "^2.21.0",
     "nodemon": "^1.12.1",
     "twilio": "^3.7.0",
     "watson-developer-cloud": "^3.0.7"
